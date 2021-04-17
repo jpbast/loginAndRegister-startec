@@ -11,18 +11,26 @@ html, body {
     height: 100vh;
 }
 
-button, input {
+button, input, select {
     font-family: inherit;
-    font-size: inherit;
     border: none;
 }
 
-button:focus, input:focus {
+input, select {
+    font-size: 1rem;
+}
+
+select {
+    appearance: none;
+}
+
+button:focus, input:focus, select:focus {
     outline: none;
 }
 
 button {
     cursor: pointer;
+    font-size: inherit;
 }
 
 a {
@@ -35,24 +43,24 @@ ul {
 
 @media screen and (max-width: 1680px) {
     html, body {
-        font-size: 16px;
+        font-size: 17px;
     }
 }
 
 @media screen and (max-width: 1450px) {
     html, body {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
 @media screen and (max-width: 1200px) {
     html, body {
-        font-size: 13px;
+        font-size: 15px;
     }
 }
 
 @media screen and (max-width: 650px) {
     html, body {
-        font-size: 11px;
+        font-size: 14px;
     }
 }
