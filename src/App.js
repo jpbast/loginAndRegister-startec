@@ -1,12 +1,18 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './styles/global.css'
 import Login from './components/Login'
+import Register from './components/Register'
+import { RegisterSectionProvider } from './contexts/RegisterSectionContext'
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <Router>
+      <Route exact path='/' component={Login} />
+      <RegisterSectionProvider>
+        <Route exact path='/register' component={Register} />
+      </RegisterSectionProvider>
+    </Router>
   );
 }
 
