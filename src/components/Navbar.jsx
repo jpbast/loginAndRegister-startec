@@ -107,7 +107,7 @@ export default function Navbar() {
     })
 
     useEffect(() => {
-        if (window.innerWith <= 600) {
+        if (window.innerWidth <= 600) {
             setClick(false)
         }
     }, [])

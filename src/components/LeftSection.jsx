@@ -25,7 +25,7 @@ const LeftSectionWrapper = styled.section`
 `
 
 export default function LeftSection() {
-    const[section] = useContext(LoginSectionContext)
+    const [section] = useContext(LoginSectionContext)
 
     return (
         <LeftSectionWrapper section={section}>

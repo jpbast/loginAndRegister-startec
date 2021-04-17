@@ -5,6 +5,8 @@ import RightSection from './RightSection'
 import styled from 'styled-components'
 import { LoginSectionProvider } from '../contexts/LoginSectionContext'
 
+document.querySelector('body').style.backgroundColor ='rgb(235, 235, 235)'
+
 const ContainerSection = styled.div`
     display: grid;
     grid-template-columns: 1.5fr 1fr;

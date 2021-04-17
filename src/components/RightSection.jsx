@@ -16,7 +16,7 @@ const Img = styled.div`
     font-size: 1.5rem;
 
     @media screen and (max-width: 600px) {
-        padding: 0 3rem 4rem 3rem;
+        padding: 3rem 3rem 2rem 3rem;
     }
 `
 
