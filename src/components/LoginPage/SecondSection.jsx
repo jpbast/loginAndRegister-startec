@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { SectionWrapper, ButtonRed, BackButton } from '../styles/SectionWrapper'
-import { LoginSectionContext } from '../contexts/LoginSectionContext'
-import backIcon from '../assets/images/back-icon.svg'
+import { SectionWrapper, ButtonRed, BackButton } from '../../styles/SectionWrapper'
+import { LoginSectionContext } from '../../contexts/LoginSectionContext'
+import backIcon from '../../assets/images/back-icon.svg'
 
 const LabelWrapper = styled.label`
     & span:last-child {

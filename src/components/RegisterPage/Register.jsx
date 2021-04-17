@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Header from './Header'
 import styled from 'styled-components'
-import { RegisterSectionContext, RegisterSectionProvider } from '../contexts/RegisterSectionContext'
+import { RegisterSectionContext } from '../../contexts/RegisterSectionContext'
 import Introduction from './Introduction'
 import Skills from './Skills'
 import RegisterNextButton from './RegisterNextButton'

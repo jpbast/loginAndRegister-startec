@@ -3,7 +3,7 @@ import FirstSection from './FirstSection'
 import styled from 'styled-components'
 import SecondSection from './SecondSection'
 import ThirdSection from './ThirdSection'
-import { LoginSectionContext } from '../contexts/LoginSectionContext'
+import { LoginSectionContext } from '../../contexts/LoginSectionContext'
 
 const LeftSectionWrapper = styled.section`
     padding: 1.2rem 0 1.2rem 10.278rem;

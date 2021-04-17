@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import uploadIcon from '../assets/images/upload-icon.svg'
+import uploadIcon from '../../assets/images/upload-icon.svg'
 
 const ResumeWrapper = styled.div`
     display: flex;

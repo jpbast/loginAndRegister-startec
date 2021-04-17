@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { SectionWrapper, ButtonRed, BackButton } from '../styles/SectionWrapper'
-import backIcon from '../assets/images/back-icon.svg'
-import { LoginSectionContext } from '../contexts/LoginSectionContext'
+import { SectionWrapper, ButtonRed, BackButton } from '../../styles/SectionWrapper'
+import backIcon from '../../assets/images/back-icon.svg'
+import { LoginSectionContext } from '../../contexts/LoginSectionContext'
 
 export default function ThirdSection() {
     const [section, setSection] = useContext(LoginSectionContext)

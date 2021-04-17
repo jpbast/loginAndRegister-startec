@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Input } from '../styles/RegisterStyle'
+import { Input } from '../../styles/RegisterStyle'
 
 const PortfolioWrapper = styled.div`
     padding-top: 1.5rem;

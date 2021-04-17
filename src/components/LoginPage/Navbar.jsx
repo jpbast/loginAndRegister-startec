@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import startecLogo from '../assets/images/startec-logo.png'
+import startecLogo from '../../assets/images/startec-logo.png'
 
 const NavbarWrapper = styled.header`
     width: 100%;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Select } from '../styles/RegisterStyle'
+import { Select } from '../../styles/RegisterStyle'
 
 const AreasWrapper = styled.div`
     width: 70%;

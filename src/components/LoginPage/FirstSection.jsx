@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { SectionWrapper, ButtonRed } from '../styles/SectionWrapper'
-import linkedinLogo from '../assets/images/linkedin-logo.svg'
-import googleLogo from '../assets/images/google-logo.png'
-import { LoginSectionContext } from '../contexts/LoginSectionContext'
+import { SectionWrapper, ButtonRed } from '../../styles/SectionWrapper'
+import linkedinLogo from '../../assets/images/linkedin-logo.svg'
+import googleLogo from '../../assets/images/google-logo.png'
+import { LoginSectionContext } from '../../contexts/LoginSectionContext'
 
 const LineSeparator = styled.div`
     width: 100%;

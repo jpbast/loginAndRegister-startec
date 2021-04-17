@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Title, Select } from '../styles/RegisterStyle'
+import { Title, Select } from '../../styles/RegisterStyle'
 import AreasOfInterests from './AreasOfInterests'
 
 const SkillsWrapper = styled.div`

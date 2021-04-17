@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Input, Select } from '../styles/RegisterStyle'
-import { getCities, ibgeAPI } from '../services/ibgeApi'
+import { Input, Select } from '../../styles/RegisterStyle'
+import { getCities, ibgeAPI } from '../../services/ibgeApi'
 import InputMask from 'react-input-mask'
 
 const PersonalInfoWrapper = styled.div`

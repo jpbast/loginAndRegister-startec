@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import LeftSection from './LeftSection'
 import RightSection from './RightSection'
 import styled from 'styled-components'
-import { LoginSectionProvider } from '../contexts/LoginSectionContext'
+import { LoginSectionProvider } from '../../contexts/LoginSectionContext'
 
 document.querySelector('body').style.backgroundColor ='rgb(235, 235, 235)'
 

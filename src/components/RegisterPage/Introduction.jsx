@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Title } from '../styles/RegisterStyle'
+import { Title } from '../../styles/RegisterStyle'
 import ProfileImg from './ProfileImg'
 import PersonalInformation from './PersonalInformation'
 import Resume from './Resume'

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import firstSectionImg from '../assets/images/first-section-img.jpeg'
-import secondAndThirdSectionImg from '../assets/images/second-and-third-section-img.png'
+import firstSectionImg from '../../assets/images/first-section-img.jpeg'
+import secondAndThirdSectionImg from '../../assets/images/second-and-third-section-img.png'
 import styled from 'styled-components'
-import { LoginSectionContext } from '../contexts/LoginSectionContext'
+import { LoginSectionContext } from '../../contexts/LoginSectionContext'
 
 const Img = styled.div`
     background-image: url(${props => props.section === 1 ? firstSectionImg : secondAndThirdSectionImg});

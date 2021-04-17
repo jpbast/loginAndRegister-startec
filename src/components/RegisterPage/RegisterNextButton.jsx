@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { RegisterSectionContext } from '../contexts/RegisterSectionContext'
+import { RegisterSectionContext } from '../../contexts/RegisterSectionContext'
 
 const NextButtonWrapper = styled.button`
     background-color: rgb(235, 235, 235);
