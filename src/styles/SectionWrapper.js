@@ -16,7 +16,7 @@ export const SectionWrapper = styled.div`
         display: block;
     }
 
-    div {
+    & > div {
         display: flex;
         flex-direction: column;
         gap: 1.6rem;

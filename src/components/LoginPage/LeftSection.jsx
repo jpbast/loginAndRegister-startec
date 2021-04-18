@@ -14,7 +14,6 @@ const LeftSectionWrapper = styled.section`
 
     @media screen and (max-width: 1200px) {
         padding-left: 5rem;
-        /* height: 100%; */
     }
 
     @media screen and (max-width: 600px) {

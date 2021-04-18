@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Input } from '../../styles/RegisterStyle'
 import Select from './Select'
 import { getCities, ibgeAPI } from '../../services/ibgeApi'
 import InputMask from 'react-input-mask'
+import InputMessage from '../LoginPage/InputMessage'
 
 const PersonalInfoWrapper = styled.div`
     width: 95%;
@@ -11,7 +11,7 @@ const PersonalInfoWrapper = styled.div`
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr;
     column-gap: 4rem;
-    row-gap: 1.5rem;
+    row-gap: 2rem;
 
     @media screen and (max-width: 800px) {
         column-gap: 3rem;
@@ -27,9 +27,14 @@ const PersonalInfoWrapper = styled.div`
 `
 
 export default function PersonalInformation() {
-    const normalInputs = ['Nome*', 'Sobrenome*', 'E-mail*']
     const [ufs, setUfs] = useState([])
     const [cities, setCities] = useState([])
+    const [linkedin, setLinkedin] = useState(false)
+    const [name, setName] = useState(false)
+    const [lastName, setLastName] = useState(false)
+    const [email, setEmail] = useState(false)
+    const emptyField = 'Campo vazio'
+    const emailRE = /^[^@]+@[^@]+\.[^@]+$/
 
     useEffect(() => {
         getUfs()
@@ -55,17 +60,17 @@ export default function PersonalInformation() {
         cities.push('Escolha uma cidade')
         setCities(cities)
     }
-
+    
+    const nameMessage = val => val ? setName('') : setName(emptyField)
+    const lastNameMessage = val => val ? setLastName('') : setLastName(emptyField)
+    const emailMessage = val => !val ? setEmail(emptyField) : (emailRE.test(val) ? setEmail('') : setEmail('E-mail inválido'))
+    const linkedinMessage = val => val ? setLinkedin('') : setLinkedin(emptyField)
+ 
     return (
         <PersonalInfoWrapper>
-            { normalInputs.map(input => {
-                return (
-                    <label htmlFor={input}>
-                        {input}
-                        <Input id={input} type="text" placeholder={input === 'E-mail' ? 'contato@gmail.com' : ''}/>
-                    </label>
-                )
-            })}
+            <InputMessage message={name} onChange={(e) => nameMessage(e.target.value)} id="nome" type="text">Nome*</InputMessage>
+            <InputMessage message={lastName} onChange={(e) => lastNameMessage(e.target.value)} id="lastname" type="text">Sobrenome*</InputMessage>
+            <InputMessage message={email} onChange={(e) => emailMessage(e.target.value)} id="email" type="text">E-mail*</InputMessage>
             <label htmlFor="telefone">
                 Telefone*
                 <InputMask style={{width: '100%', padding: '0.9rem', backgroundColor: 'white'}} id='telefone' mask='(99) 99999-9999' />
@@ -79,20 +84,7 @@ export default function PersonalInformation() {
             <Select id="vaga" options={['', 'Não tenho pressa', 'Estou buscando casualmente', 'Estou buscando ativamente']} selected={0} disabled hidden>
                 Como está a sua procura por vagas?*
             </Select>
-            {/* <label htmlFor="vaga">
-                Como está a sua procura por vagas?*
-                <Select name="vaga" id="vaga">
-                    <option value="" selected disabled hidden></option>
-                    <option value="1">Não tenho pressa</option>
-                    <option value="2">Estou buscando casualmente</option>
-                    <option value="3">Estou buscando ativamente</option>
-                </Select>
-            </label> */}
-            <label htmlFor="vaga">
-                Linkedin*
-                <Input type="text" placeholder='www.linkedin.com/in/nome' />
-            </label>
-            
+            <InputMessage message={linkedin} onChange={(e) => linkedinMessage(e.target.value)} type="text" placeholder="www.linkedin.com/in/nome">Linkedin*</InputMessage>
         </PersonalInfoWrapper>
     )
 }

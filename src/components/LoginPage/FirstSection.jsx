@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { SectionWrapper, ButtonRed } from '../../styles/SectionWrapper'
 import linkedinLogo from '../../assets/images/linkedin-logo.svg'
 import googleLogo from '../../assets/images/google-logo.png'
 import { LoginSectionContext } from '../../contexts/LoginSectionContext'
+import InputMessage from './InputMessage'
 
 const LineSeparator = styled.div`
     width: 100%;
@@ -42,6 +43,9 @@ const ButtonLinkedin = styled.button`
 
 export default function FirstSection() {
     const [section, setSection] = useContext(LoginSectionContext)
+    const [email, setEmail] = useState(false)
+    const emptyField = 'Campo vazio'
+    const emailRE = /^[^@]+@[^@]+\.[^@]+$/
 
     function handleAvancar() {
         const email = document.getElementById('email').value
@@ -51,14 +55,15 @@ export default function FirstSection() {
             setSection(2)
     }   
 
+    const emailMessage = val => !val ? setEmail(emptyField) : (emailRE.test(val) ? setEmail('') : setEmail('E-mail inválido'))
+
     return (
         <SectionWrapper>
             <span className="title">Junte-se a nós</span>
             <div> 
-                <label htmlFor="email">
-                    <span>E-mail</span>
-                    <input id="email" type="text" placeholder="contato@gmail.com"/>
-                </label>
+                <InputMessage login id="email" message={email} onChange={(e) => emailMessage(e.target.value)} type="text">
+                    E-mail
+                </InputMessage>
                 <ButtonRed onClick={handleAvancar}>Avançar</ButtonRed>
                 <LineSeparator />
                 <ButtonLinkedin>
