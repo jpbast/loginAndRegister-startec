@@ -37,7 +37,6 @@ const SkillWrapper = styled.div`
         flex-direction: column;
         position: relative;
         cursor: pointer;
-        /* border: 2px solid black; */
     }
 
     .trace {
@@ -48,12 +47,12 @@ const SkillWrapper = styled.div`
 
     .trace:first-child {  
         left: 0;
-        transform: rotate(45deg)
+        transform: rotate(45deg);
     }
     .trace:last-child {
         position: absolute;
-        top: 50%;
         left: 0;
+        top: 50%;
         transform: rotate(-45deg)  translateY(-50%);
     }
 
