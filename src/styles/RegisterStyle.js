@@ -13,14 +13,3 @@ export const Input = styled.input`
     background-color: white;
     padding: 0.9rem;
 `
-
-export const Select = styled.select`
-    width: 100%;
-    background-image: url(${arrowDown});
-    background-repeat: no-repeat;
-    background-size: 1.1rem;
-    background-position-x: calc(100% - 1rem);
-    background-position-y: 50%;
-    background-color: white;
-    padding: 0.9rem;
-`
