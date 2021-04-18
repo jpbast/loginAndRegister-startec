@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import arrowDown from '../assets/images/arrow-down-icon.svg'
 
 export const Title = styled.span`
     color: rgb(0, 0, 60);
