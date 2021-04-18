@@ -127,7 +127,7 @@ export default function MultiRangeSlider() {
       const minPercent = getPercent(minVal);
       const maxPercent = getPercent(maxVal);
       const val = maxVal*2/3
-      if (maxVal > val)
+      if (maxVal > (minVal + minVal/2))
         setMinVal(Math.round(val))
 
       if (range.current) {
