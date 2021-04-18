@@ -131,11 +131,6 @@ export default function SkillsSection() {
                         <div>
                             <span>Nos conte seu tempo de experiência com <span>{skill}</span></span>
                             <Select id="cidade" options={['1-2 anos', '2-3 anos', '3 anos mou mais']} />
-                            {/* <Select name="teste" id="">
-                                <option value="">1-2 anos</option>]
-                                <option value="">2-3 anos</option>
-                                <option value="">3 anos ou mais</option>
-                            </Select> */}
                             <Checkbox onClick={handleCheckbox} id={skill}>Habilidade principal</Checkbox>
                         </div>
                     )

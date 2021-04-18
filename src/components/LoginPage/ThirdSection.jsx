@@ -41,18 +41,6 @@ export default function ThirdSection() {
                 <InputMessage login message={confirmPassword} onChange={(e) => confirmPasswordMessage(e.target.value)} placeholder="*******" id="confirmPassword" type="text">
                     Confirme sua senha
                 </InputMessage>
-                {/* <label htmlFor="email">
-                    <span>Nome completo</span>
-                    <input id="email" type="text" placeholder="******"/>
-                </label>
-                <label htmlFor="email">
-                    <span>Senha</span>
-                    <input id="email" type="text" placeholder="******"/>
-                </label>
-                <label htmlFor="email">
-                    <span>Confirme sua senha</span>
-                    <input id="email" type="text" placeholder="******"/>
-                </label> */}
                 <Link to="/register">
                     <ButtonRed style={{width: '100%'}}>Entrar</ButtonRed>
                 </Link>
