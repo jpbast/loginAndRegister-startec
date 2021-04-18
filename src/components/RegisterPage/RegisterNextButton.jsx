@@ -17,21 +17,21 @@ const NextButtonWrapper = styled.button`
         transition: 0.2s;
     }
 
-    button:first-child {
+    .back {
         background-color: rgb(235, 235, 235);
         color: rgb(0, 0, 60);
     }
 
-    button:first-child:hover {
+    .back:hover {
         color: rgb(0, 0, 150);
     }
 
-    button:last-child {
+    .next {
         background-color: rgb(0, 0, 60);
         color: rgb(235, 235, 235);
     }
 
-    button:last-child:hover {
+    .next:hover {
         background-color: rgb(0, 0, 150);
     }
 
@@ -41,22 +41,24 @@ const NextButtonWrapper = styled.button`
 `
 
 export default function RegisterNextButton() {
-    const [registerSection, setRegisterSection] = useContext(RegisterSectionContext)
+    const { section } = useContext(RegisterSectionContext)
+    const [registerSection, setRegisterSection] = section
 
     function handleBack() {
         setRegisterSection(registerSection-1)
     }
 
     function handleContinue() {
-        setRegisterSection(registerSection+1)
+        if (registerSection !== 3)
+            setRegisterSection(registerSection+1)
     }
 
     return (
         <NextButtonWrapper>
             { registerSection > 1 && (
-                <button onClick={handleBack}>Voltar</button>
+                <button className="back" onClick={handleBack}>Voltar</button>
             ) }
-            <button onClick={handleContinue}>CONTINUAR</button>
+            <button className="next" onClick={handleContinue}>CONTINUAR</button>
         </NextButtonWrapper>
     )
 }

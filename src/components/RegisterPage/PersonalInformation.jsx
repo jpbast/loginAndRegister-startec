@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Input, Select } from '../../styles/RegisterStyle'
+import { Input } from '../../styles/RegisterStyle'
+import Select from './Select'
 import { getCities, ibgeAPI } from '../../services/ibgeApi'
 import InputMask from 'react-input-mask'
 
@@ -42,15 +43,16 @@ export default function PersonalInformation() {
                 'Content-Type': 'application/json',
             })
         }
-        const ufs = await ibgeAPI(options)
+        const uf = await ibgeAPI(options)
             .then(res => res.data)
             .catch(err => err)
-    
-        setUfs(ufs)
+        uf.push({nome: 'Escolha um estado', id: ''})
+        setUfs(uf)
     }
 
     async function handleSelect(event) {
         const cities = await getCities(event.target.value)
+        cities.push('Escolha uma cidade')
         setCities(cities)
     }
 
@@ -68,21 +70,16 @@ export default function PersonalInformation() {
                 Telefone*
                 <InputMask style={{width: '100%', padding: '0.9rem', backgroundColor: 'white'}} id='telefone' mask='(99) 99999-9999' />
             </label>
-            <label htmlFor="localidade">
+            <Select onChange={handleSelect} id="localidade" options={ufs} selected={ufs.length-1} disabled hidden>
                 Localidade*
-                <Select onChange={handleSelect} name="localidade" id="localidade">
-                    <option value="" selected disabled hidden>Escolha um estado</option>
-                    { ufs.map(uf => <option value={uf.id}>{uf.nome}</option>) }   
-                </Select>
-            </label>
-            <label htmlFor="cidade">
+            </Select>
+            <Select id="cidade" options={cities} selected={cities.length-1} disabled hidden>
                 Cidade*
-                <Select name="cidade" id="cidade">
-                    <option value="" selected disabled hidden>Escolha uma cidade</option>
-                    { cities.map(city => <option value={city}>{city}</option>) }   
-                </Select>
-            </label>
-            <label htmlFor="vaga">
+            </Select>
+            <Select id="vaga" options={['', 'Não tenho pressa', 'Estou buscando casualmente', 'Estou buscando ativamente']} selected={0} disabled hidden>
+                Como está a sua procura por vagas?*
+            </Select>
+            {/* <label htmlFor="vaga">
                 Como está a sua procura por vagas?*
                 <Select name="vaga" id="vaga">
                     <option value="" selected disabled hidden></option>
@@ -90,7 +87,7 @@ export default function PersonalInformation() {
                     <option value="2">Estou buscando casualmente</option>
                     <option value="3">Estou buscando ativamente</option>
                 </Select>
-            </label>
+            </label> */}
             <label htmlFor="vaga">
                 Linkedin*
                 <Input type="text" placeholder='www.linkedin.com/in/nome' />

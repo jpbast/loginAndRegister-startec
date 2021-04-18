@@ -43,10 +43,10 @@ const HeaderWrapper = styled.header`
         color: black
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 900px) {
         ul {
             width: 100%;
-            gap: 6rem;
+            gap: 7rem;
         }
     }
 
@@ -55,15 +55,30 @@ const HeaderWrapper = styled.header`
             gap: 0;
             justify-content: space-between;
         }
+    }
+
+    @media screen and (max-width: 500px) {
+        /* font-size: 0.8rem; */
+        
 
         li {
             gap: 0.3rem;
         }
     }
+
+    @media screen and (max-width: 400px) {
+        font-size: 0.9rem;
+    }
+
+    @media screen and (max-width: 350px) {
+        outline: 2px solid blue;
+        font-size: 0.8rem;
+    }
 `
 
 export default function Header() {
-    const [registerSection, setRegisterSection] = useContext(RegisterSectionContext)
+    const { section } = useContext(RegisterSectionContext)
+    const [registerSection, setRegisterSection] = section
 
     return (
         <HeaderWrapper>

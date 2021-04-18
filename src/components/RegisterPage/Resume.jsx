@@ -8,13 +8,14 @@ const ResumeWrapper = styled.div`
     gap: 0.5rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    cursor: pointer;
 
     img {
         width: 1.2rem;
+        cursor: pointer;
     }
 
     span {
+        cursor: pointer;
         transition: 0.2s;
     }
 
