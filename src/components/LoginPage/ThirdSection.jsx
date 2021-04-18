@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { SectionWrapper, ButtonRed, BackButton } from '../../styles/SectionWrapper'
 import backIcon from '../../assets/images/back-icon.svg'
 import { LoginSectionContext } from '../../contexts/LoginSectionContext'
+import { Link } from 'react-router-dom'
 
 export default function ThirdSection() {
     const [section, setSection] = useContext(LoginSectionContext)
@@ -32,7 +33,9 @@ export default function ThirdSection() {
                     <span>Confirme sua senha</span>
                     <input id="email" type="text" placeholder="******"/>
                 </label>
-                <ButtonRed>Entrar</ButtonRed>
+                <Link to="/register">
+                    <ButtonRed style={{width: '100%'}}>Entrar</ButtonRed>
+                </Link>
             </div>
         </SectionWrapper>
     )
