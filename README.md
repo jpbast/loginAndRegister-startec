@@ -2,7 +2,8 @@
 
 Sistema feito em React que possui páginas de login e cadastro para o processo de seleção da empresa Startec.
 
-Link para aplicação: https://jpbast-startec.herokuapp.com/register
+Link para aplicação: https://jpbast-startec.herokuapp.com/
+
 ## Funcionamento
 
 A utilização da aplicação é simples e segue o que foi pedido no projeto. Na rota raiz do projeto, encontra-se a tela de Login com as suas respectivas seções. Para navegar entre as seções basta apertar no botão vermelho. Por se tratar de um projeto apenas frontend, a aplicação não conta com recursos de verificação de usuário, senha, etc. Assim, caso o usuário esteja na seção 1 e aperte em “Avançar”, será direcionado para a seção 2. Caso o usuário digite “admin” no campo de e-mail da seção 1 e aperte em avançar, será direcionado para a seção 3. 
